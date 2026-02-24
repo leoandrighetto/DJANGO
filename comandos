@@ -1,0 +1,9 @@
+pip install Django
+
+django-admin
+
+django-admin startproject nome_do_projeto
+
+
+rodar app:
+py manage.py runserver
