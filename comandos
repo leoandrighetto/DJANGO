@@ -7,3 +7,19 @@ django-admin startproject nome_do_projeto
 
 rodar app:
 py manage.py runserver
+
+
+
+
+CRIAR APP:
+
+ py manage.py startapp nome_do_app
+
+
+
+
+Adicionar e sincronizar uma migration:
+
+py manage.py makemigrations
+
+py manage.py migrate
