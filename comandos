@@ -23,3 +23,4 @@ Adicionar e sincronizar uma migration:
 py manage.py makemigrations
 
 py manage.py migrate
+
