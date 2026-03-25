@@ -2,6 +2,7 @@ from django.db import models
 from .base_model import BaseModel
 from django.core.validators import MinLengthValidator
 from ..enumerations import StatusSubmission
+from .linguagem import Linguagem
 
 
 class Submissao(BaseModel):
@@ -16,6 +17,8 @@ class Submissao(BaseModel):
     status = models.CharField(
         choices=StatusSubmission, help_text="Status Atual"
     )
+
+    linguagem = models.ForeignKey(Linguagem,on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Linguagem: {self.linguagem} Código Fonte: {self.codigo_fonte} Status {self.status}"

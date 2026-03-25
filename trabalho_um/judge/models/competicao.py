@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator
 from django.core.validators import MaxValueValidator
 from django.core.validators import MinLengthValidator
 from django.core.validators import MaxLengthValidator
+from .perfil import Perfil
 
 
 class Competicao(BaseModel):
@@ -49,7 +50,12 @@ class Competicao(BaseModel):
         default=datetime.now,
         help_text="Data de atualização",
     )
+
     penalidade=models.IntegerField(validators=[MinValueValidator(0)])
+
+    perfil = models.ManyToManyField(Perfil, help_text="Selecione os perfis relacionados com a competição")
+    
+
 
     def __str__(self):
         return (f"Nome {self.nome}")

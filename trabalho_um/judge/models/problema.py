@@ -3,6 +3,11 @@ from django.db import models
 from .base_model import BaseModel
 from django.core.validators import MinLengthValidator
 from ..enumerations import Dificuldade, Idioma, LimiteTempo, LimiteMemoria, Nota
+from .categoria import Categoria
+from .linguagem import Linguagem
+from .perfil import Perfil
+from .submissao import Submissao
+
 
 
 class Problema(BaseModel):
@@ -58,6 +63,13 @@ class Problema(BaseModel):
         default=datetime.now,
         help_text="Data de Atualização",
     )
+
+    ##### Relações
+
+    categoria = models.ManyToManyField(Categoria, help_text="Selecione uma categoria para o problema")
+    perfil = models.ManyToManyField(Perfil, help_text="Selecione o perfil atribuído ao Problema")
+    linguagem = models.ManyToManyField(Linguagem, help_text="Selecione a linguagem atribuída ao Problema")
+    submissao = models.ForeignKey(Submissao, null=True,blank=True,on_delete=models.CASCADE)
 
     def __str__(self):
         return (f'Código: {self.cod}')

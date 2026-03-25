@@ -7,9 +7,14 @@ from django.core.validators import MinLengthValidator
 from django.core.validators import MaxLengthValidator
 from ..validators.validadores_de_data import data_minima
 from ..enumerations import Genero, Idioma
+from django.contrib.auth.models import User
+from .participacao import Participacao
 
 
 class Perfil(BaseModel):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     data_nascimento = models.DateField(
         auto_now=False,
         auto_now_add=False,
@@ -54,5 +59,7 @@ class Perfil(BaseModel):
     )
     treinador = models.BooleanField(default=False, help_text="Perfil com Treinador")
 
+    participacao = models.ForeignKey(Participacao,on_delete=models.CASCADE,null=True,blank=True)
+
     def __str__(self):
-        return (f"Nome: {self.data_nascimento}")
+        return (f"Nome: {self.user}")
