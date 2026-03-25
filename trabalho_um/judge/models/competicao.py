@@ -2,10 +2,8 @@ from datetime import datetime
 from django.db import models
 from .base_model import BaseModel
 from django.core.validators import MinValueValidator
-from django.core.validators import MaxValueValidator
 from django.core.validators import MinLengthValidator
 from django.core.validators import MaxLengthValidator
-from .perfil import Perfil
 
 
 class Competicao(BaseModel):
@@ -52,8 +50,6 @@ class Competicao(BaseModel):
     )
 
     penalidade=models.IntegerField(validators=[MinValueValidator(0)])
-
-    perfil = models.ManyToManyField(Perfil, help_text="Selecione os perfis relacionados com a competição")
     
 
 

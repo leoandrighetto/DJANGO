@@ -13,8 +13,7 @@ class Categoria(BaseModel):
         unique=True,
         help_text="Slug da categoria",
     )
-    descricao = models.TextField(
-        null=True, blank=True, help_text="Descrição da categoria"
+    descricao = models.TextField(help_text="Descrição da categoria"
     )
 
     def __str__(self):

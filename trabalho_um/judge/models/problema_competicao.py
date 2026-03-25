@@ -16,9 +16,9 @@ class ProblemaCompeticao(BaseModel):
     )
     ordem = models.IntegerField(validators=[MinValueValidator(1)])
 
-    problema = models.ForeignKey(Problema, null=True,blank=True, on_delete=models.CASCADE)
+    problema = models.ForeignKey(Problema, on_delete=models.CASCADE)
 
-    competicao = models.ForeignKey(Competicao, null=True,blank=True, on_delete=models.CASCADE)
+    competicao = models.ForeignKey(Competicao, on_delete=models.CASCADE)
 
 
     def __str__(self):

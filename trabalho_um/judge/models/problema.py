@@ -69,7 +69,7 @@ class Problema(BaseModel):
     categoria = models.ManyToManyField(Categoria, help_text="Selecione uma categoria para o problema")
     perfil = models.ManyToManyField(Perfil, help_text="Selecione o perfil atribuído ao Problema")
     linguagem = models.ManyToManyField(Linguagem, help_text="Selecione a linguagem atribuída ao Problema")
-    submissao = models.ForeignKey(Submissao, null=True,blank=True,on_delete=models.CASCADE)
+    submissao = models.ForeignKey(Submissao, on_delete=models.CASCADE)
 
     def __str__(self):
         return (f'Código: {self.cod}')

@@ -26,7 +26,7 @@ class Teste(BaseModel):
         auto_now=False, auto_now_add=False, default=datetime.now
     )
 
-    problema = models.ForeignKey(Problema,null=True,blank=True, on_delete=models.CASCADE)
+    problema = models.ForeignKey(Problema, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"Nome: {self.nome} Dados de Entrada: {self.dados_entrada} Dados de Saída: {self.dados_saida} Criado: {self.criado} Atualizado: {self.atualizado}"
