@@ -1,0 +1,45 @@
+pip install Django
+
+django-admin
+
+django-admin startproject nome_do_projeto
+
+
+rodar app:
+py manage.py runserver
+
+
+
+
+CRIAR APP:
+
+ py manage.py startapp nome_do_app
+
+
+
+
+Adicionar e sincronizar uma migration:
+
+py manage.py makemigrations
+
+py manage.py migrate
+
+
+
+As migrations não são realizadas automaticamente quando um app é criado. 
+é preciso dar o comando:
+
+py manage.py makemigrations nome_do_app
+
+
+""""""""" PARA RELACIONAR UMA TABELA ESPECÍFICA AO USER:
+
+from django.contrib.auth.models import User
+
+
+class Perfil(BaseModel):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
+# Dentro da tabela que receberá a relação 1:1
+
