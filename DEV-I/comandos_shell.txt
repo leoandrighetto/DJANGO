@@ -1,0 +1,24 @@
+from relacionamentos.models import Revista
+
+type(revista)
+
+dir(revista)
+
+help(Revista.clean)
+
+>>> super_interessante.full_clean() --> passa pela validação determinada no banco (validators)
+
+
+>>> super_interessante.save()    SALVA.
+
+del(qualquercoisa) DELETA variável
+
+---
+
+qualquercoisa = Revista.objects.get(id=3 or pk=3)
+qualquercoisa.delete()
+
+---
+
+GET = READ no crud (pra 1 (UM) objeto)
+
