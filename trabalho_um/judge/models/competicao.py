@@ -2,7 +2,6 @@ from datetime import datetime
 from django.db import models
 from .base_model import BaseModel
 from django.core.validators import MinValueValidator
-from django.core.validators import MaxValueValidator
 from django.core.validators import MinLengthValidator
 from django.core.validators import MaxLengthValidator
 
@@ -49,7 +48,10 @@ class Competicao(BaseModel):
         default=datetime.now,
         help_text="Data de atualização",
     )
+
     penalidade=models.IntegerField(validators=[MinValueValidator(0)])
+    
+
 
     def __str__(self):
         return (f"Nome {self.nome}")

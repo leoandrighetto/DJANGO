@@ -7,9 +7,13 @@ from django.core.validators import MinLengthValidator
 from django.core.validators import MaxLengthValidator
 from ..validators.validadores_de_data import data_minima
 from ..enumerations import Genero, Idioma
+from django.contrib.auth.models import User
 
 
 class Perfil(BaseModel):
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+
     data_nascimento = models.DateField(
         auto_now=False,
         auto_now_add=False,
@@ -52,7 +56,8 @@ class Perfil(BaseModel):
         validators=[MinValueValidator(0)],
         help_text="Quantidade de Problemas Submetidos",
     )
+    
     treinador = models.BooleanField(default=False, help_text="Perfil com Treinador")
 
     def __str__(self):
-        return (f"Nome: {self.data_nascimento}")
+        return (f"Nome: {self.user}")
