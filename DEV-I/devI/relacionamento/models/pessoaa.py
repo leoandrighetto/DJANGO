@@ -44,3 +44,6 @@ class Pessoaa(BaseModel):
     cidade = models.ForeignKey(
         Cidade, on_delete=models.CASCADE, help_text="Seleciona a cidade"
     )
+
+    def __str__(self):
+        return f'{self.nome}'

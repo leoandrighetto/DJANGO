@@ -9,4 +9,4 @@ class Esporte(BaseModel):
     )
 
     def __str__(self):
-        return "f{self.nome}"
+        return f"{self.name}"

@@ -31,7 +31,7 @@ with open("pessoas.csv", "r", encoding="utf-8") as a:
             estado = dados[4]
             time_que_torce = dados[5]
             renda = Decimal(dados[6])
-            esporte_favorito = dados[6]
+            esporte_favorito = dados[7]
 
             if sexo.upper() == "MASCULINO":
                 sexo = Sexo.MASCULINO
@@ -135,7 +135,7 @@ with open("pessoas.csv", "r", encoding="utf-8") as a:
 
 print("CABÔ... PROCESSAMENTO CONCLUÍDO.")
 print(
-    f"Total de processos: {processados + erros}"
-    f"Processados corretamente: {processados}"
-    f"Processados com erro: {erros}"
+    f"\nTotal de processos: {processados + erros}\n"
+    f"Processados corretamente: {processados}\n"
+    f"Processados com erro: {erros}\n"
 )
