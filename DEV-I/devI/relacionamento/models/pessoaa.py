@@ -27,7 +27,7 @@ class Pessoaa(BaseModel):
     )
 
     renda = models.DecimalField(
-        decimal_places=1,
+        decimal_places=2,
         max_digits=10,
         validators=[MinValueValidator(0)],
         help_text="Insira a renda da pessoa",
@@ -36,7 +36,7 @@ class Pessoaa(BaseModel):
     time_torce = models.ForeignKey(
         Time, on_delete=models.RESTRICT, help_text="Selecione o seu time de torcida"
     )
-    esporte_favotiro = models.ForeignKey(
+    esporte_favorito = models.ForeignKey(
         Esporte,
         on_delete=models.RESTRICT,
         help_text="Selecione o seu esporte de torcida",

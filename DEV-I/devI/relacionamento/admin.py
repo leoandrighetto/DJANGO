@@ -1,8 +1,9 @@
 from django.contrib import admin
-from relacionamento.models import (Pessoa, Passaporte, Reporter, Artigo, ArtigoAdmin, Revista, Reportagem)
+from relacionamento.models import (Pessoa, Passaporte, Reporter, Artigo, ArtigoAdmin, Revista, Reportagem, Pessoaa)
 
 
 admin.site.register(Pessoa)
+admin.site.register(Pessoaa)
 admin.site.register(Passaporte)
 admin.site.register(Reporter)
 admin.site.register(Artigo, ArtigoAdmin)

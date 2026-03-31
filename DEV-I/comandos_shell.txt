@@ -6,19 +6,24 @@ dir(revista)
 
 help(Revista.clean)
 
->>> super_interessante.full_clean() --> passa pela validação determinada no banco (validators)
 
+
+>>> get = READ no crud (pra 1 (UM) objeto)
+
+>>> super_interessante.full_clean() --> passa pela validação determinada no banco (validators)
 
 >>> super_interessante.save()    SALVA.
 
-del(qualquercoisa) DELETA variável
-
+#del(qualquercoisa) DELETA variável
 ---
-
 qualquercoisa = Revista.objects.get(id=3 or pk=3)
-qualquercoisa.delete()
-
+>>> qualquercoisa.delete()
 ---
 
-GET = READ no crud (pra 1 (UM) objeto)
+
+>>>all         retorna todos os registros
+
+>>> filter     retorna todos os registros da consulta com os parâmetros informados
+
+
 
