@@ -4,7 +4,6 @@ from django.db import models
 from wrapper.models import BaseModel
 from wrapper.enumerations import Sexo
 from wrapper.models import Time, Esporte, Cidade
-from aula.managers import PessoaManager
 
 
 class Pessoa(BaseModel):
@@ -32,8 +31,6 @@ class Pessoa(BaseModel):
 
     cidade = models.ForeignKey(Cidade, on_delete=models.RESTRICT,
                                help_text="Selecione a cidade que mora")
-
-    objects = PessoaManager()                               
 
     def __str__(self):
         return self.nome

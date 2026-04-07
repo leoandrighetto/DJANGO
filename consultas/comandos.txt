@@ -1,0 +1,33 @@
+Q Expression 
+
+>>> from django.db.models import Q
+>>> teste = Reporter.objects.filter(Q(name__icontains="thiago") & Q(name__icontains="nunes"))
+
+F expression
+
+>>> from django.db.models import F
+from wrapper.models.cidade import Cidade
+>>> Cidade.objects.filter(nome__icontains=F("estado"))
+
+
+annotate 
+
+com Count
+
+
+>>> cidades = Cidade.objects.annotate(moradores = Count("pessoa"))        anotou dentro de cada cidade um atributo moradores
+>>> 
+>>> 
+
+
+aggregate
+
+
+>>> testesao = Pessoa.objects.aggregate(maior_salario=Max("renda"),menor_salario=Min("renda"),media_salarial=Avg("renda"))
+>>> 
+>>>
+>>>
+>>>
+>>>
+>>>
+
